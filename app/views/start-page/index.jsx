@@ -25,9 +25,17 @@ export default class StartPage extends Component {
         Helios
       </div>
     );
+    const appbar = (
+      <AppBar title={title} showMenuIconButton={false} style={{ paddingLeft: 10 }} />
+    );
+
+    const appbarView = this.props.location.pathname !== '/view-html/'
+      ? appbar
+      : null;
+
     return (
       <div className="view-start-page">
-        <AppBar title={title} showMenuIconButton={false} style={{ paddingLeft: 10 }} />
+        {appbarView}
         {this.props.children}
         <Toast show={UtilsStore.SHOW_TOAST} message={UtilsStore.TOAST_MESSAGE} />
       </div>

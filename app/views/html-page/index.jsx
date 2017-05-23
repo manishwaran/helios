@@ -1,25 +1,38 @@
 import { observer } from 'mobx-react';
 import React, { Component } from 'react';
-import { browserHistory } from 'react-router';
 
 import './style.scss';
 import propTypes from './proptypes';
+import { HTMLStore } from '../../stores';
+import { PageFrame } from '../../components';
 
 @observer
 export default class StartPage extends Component {
 
   static propTypes = propTypes;
 
-  componentWillMount() {
-    if (this.props.location.pathname === '/') {
-      browserHistory.push('/app');
-    }
+  constructor(props) {
+    super(props);
+    this.onClick = this.onClick.bind(this);
+  }
+
+  onClick() {
+    console.log('clicked');
   }
 
   render() {
     return (
       <div className="view-html-page">
-        Html page fetch happens here
+        <PageFrame
+          iframeSource={HTMLStore.HTML}
+        />
+        <button
+          type="button"
+          className="next-action"
+          onClick={this.onClick}
+        >
+          Next
+        </button>
       </div>
     );
   }

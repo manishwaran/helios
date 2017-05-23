@@ -53,7 +53,7 @@ export default class PageFetcher {
     const siteUrl = req.query.url;
     const ondemand = req.query.ondemand;
     this.fetchPage(siteUrl, ondemand)
-    .then(response => res.status(200).send(JSON.stringify({ response, message: 'HTML page fetched.' })))
+    .then(html => res.status(200).send(JSON.stringify({ html, message: 'HTML page fetched.' })))
     .catch(err => res.status(500).send(JSON.stringify({ serverError: err.message })));
   }
 

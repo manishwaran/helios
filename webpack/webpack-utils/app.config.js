@@ -62,7 +62,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Spencers',
+      title: 'Helios',
       template: 'webpack/webpack-utils/template.ejs',
       inject: true,
       links: ['style.css'],

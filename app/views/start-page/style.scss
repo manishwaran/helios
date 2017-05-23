@@ -13,4 +13,7 @@
     padding-left: 0px;
     display: flex;
   }
+  button:focus {
+    outline: none;
+  }
 }

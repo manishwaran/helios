@@ -1,0 +1,16 @@
+.view-html-page {
+  width: inherit;
+  height: inherit;
+  .next-action {
+    position: fixed;
+    bottom: 20px;
+    right: 100px;
+    width: 10%;
+    border-radius: 48%;
+    background: #0097a7;
+    border: 3px solid #ccc;
+  }
+  button:focus {
+    outline: none;
+  }
+}

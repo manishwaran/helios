@@ -17,7 +17,7 @@ render((
     <Router history={browserHistory}>
       <Route path="/" component={StartPage}>
         <Route path="input" component={InputPage} />
-        <Route path="result" component={HTMLPage} />
+        <Route path="view-html" component={HTMLPage} />
       </Route>
     </Router>
   </MuiThemeProvider>

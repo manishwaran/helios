@@ -1,0 +1,50 @@
+.component-pageframe {
+  height: 100%;
+
+  .iframe {
+    height: inherit;
+    border-color: #b1acac;
+    padding: 0;
+  }
+
+  .css-selector {
+    top: 0;
+    right: 0;
+    color: white;
+    max-width: 400px;
+    overflow: hidden;
+    margin-right: 2px;
+    position: absolute;
+    border-radius: 2px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 0px 5px 0px 5px;
+    background-color: #78909c;
+  }
+
+  @keyframes all {
+    0% { color: #4F772D; }
+    25% { color: #54494B; }
+    50% { color: #B33951; }
+    75% { color: #5C9EAD; }
+    100% { color: #F96F5D; }
+  }
+
+  .empty-response {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+    .empty-response-content{
+      color: rgb(120, 144, 156);
+      .mascot {
+        font-size: 3rem;
+        color: #54494B;
+        &.loading {
+          animation: all 1s infinite alternate;
+        }
+      }
+    }
+  }
+}

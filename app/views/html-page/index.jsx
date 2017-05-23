@@ -1,12 +1,9 @@
 import { observer } from 'mobx-react';
-import AppBar from 'material-ui/AppBar';
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 
 import './style.scss';
 import propTypes from './proptypes';
-import { Toast } from '../../components';
-import { UtilsStore } from '../../stores';
 
 @observer
 export default class StartPage extends Component {
@@ -20,16 +17,9 @@ export default class StartPage extends Component {
   }
 
   render() {
-    const title = (
-      <div className="title">
-        Helios
-      </div>
-    );
     return (
-      <div className="view-start-page">
-        <AppBar title={title} showMenuIconButton={false} style={{ paddingLeft: 10 }} />
-        {this.props.children}
-        <Toast show={UtilsStore.SHOW_TOAST} message={UtilsStore.TOAST_MESSAGE} />
+      <div className="view-html-page">
+        Html page fetch happens here
       </div>
     );
   }

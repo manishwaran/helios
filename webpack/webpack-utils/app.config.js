@@ -6,6 +6,7 @@ module.exports = {
   bail: true,
   entry: {
     vendorbase: [
+      'bootstrap-loader',
       'react',
       'react-dom',
       'mobx',
@@ -19,8 +20,6 @@ module.exports = {
       'react-ace',
       'react-addons-css-transition-group',
       'react-keydown',
-      'brace',
-      'classnames',
     ],
     index: './app/index.jsx',
   },
@@ -40,45 +39,52 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'eslint',
       },
-      {
-        test: /\.jsx?$/,
+      { test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel',
       },
-      {
-        test: /\.s?css$/,
+      { test: /\.s?css$/,
         loader: ExtractTextPlugin.extract({
           fallbackLoader: 'style-loader',
           loader: ['css', 'sass'],
         }),
       },
-      {
-        test: /\.(woff2?|svg)$/,
+      { test: /\.(woff2?|svg)$/,
         loader: 'url?limit=10000',
       },
-      {
-        test: /\.(ttf|eot|gif|png)$/,
+      { test: /\.(ttf|eot|gif|png)$/,
         loader: 'file',
       },
-      {
-        test: /\.json$/,
+      { test: /\.json$/,
         loader: 'json',
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Firestar-tagger-v2.0',
+      title: 'Spencers',
       template: 'webpack/webpack-utils/template.ejs',
       inject: true,
       links: ['style.css'],
     }),
+    // Bootstrap4 plugins
     new webpack.ProvidePlugin({
       $: 'jquery',
       Tether: 'tether',
       jQuery: 'jquery',
       'window.jQuery': 'jquery',
       'window.Tether': 'tether',
+      Tooltip: 'exports?Tooltip!bootstrap/js/dist/tooltip',
+      Alert: 'exports?Alert!bootstrap/js/dist/alert',
+      Button: 'exports?Button!bootstrap/js/dist/button',
+      Carousel: 'exports?Carousel!bootstrap/js/dist/carousel',
+      Collapse: 'exports?Collapse!bootstrap/js/dist/collapse',
+      Dropdown: 'exports?Dropdown!bootstrap/js/dist/dropdown',
+      Modal: 'exports?Modal!bootstrap/js/dist/modal',
+      Popover: 'exports?Popover!bootstrap/js/dist/popover',
+      Scrollspy: 'exports?Scrollspy!bootstrap/js/dist/scrollspy',
+      Tab: 'exports?Tab!bootstrap/js/dist/tab',
+      Util: 'exports?Util!bootstrap/js/dist/util',
     }),
 
     new webpack.EnvironmentPlugin([
@@ -95,6 +101,6 @@ module.exports = {
       name: 'index',
       chunks: ['vendorbase', 'vendorAddon', 'index'],
     }),
-
   ],
+
 };

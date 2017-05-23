@@ -7,7 +7,6 @@ import PageFetcher from './page-fetch';
 
 const app = express();
 const pageFetcher = new PageFetcher();
-
 app.use('/', express.static(path.join(__dirname, '/app')));
 app.use('/:pathname', express.static(path.join(__dirname, '/app')));
 app.use(bodyParser.urlencoded({ extended: true }));

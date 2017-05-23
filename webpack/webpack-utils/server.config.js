@@ -1,5 +1,5 @@
-const fs = require('fs');
 const webpack = require('webpack');
+const fs = require('fs');
 
 const nodeModules = {};
 
@@ -31,8 +31,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'eslint',
       },
-      {
-        test: /\.js$/,
+      { test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel',
       },

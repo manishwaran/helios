@@ -1,9 +1,7 @@
 import ActionUtils from './utils';
-import StatsActions from './stats';
-import ExpensesActions from './expenses';
+import HTMLAction from './html';
 
 export {
+  HTMLAction,
   ActionUtils,
-  StatsActions,
-  ExpensesActions,
 };

@@ -7,7 +7,7 @@ import { Router, Route, browserHistory } from 'react-router';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 
-import { StartPage, HTMLPage } from './views';
+import { StartPage, HTMLPage, InputPage } from './views';
 
 mobx.useStrict(true);
 injectTapEventPlugin();
@@ -16,7 +16,8 @@ render((
   <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
     <Router history={browserHistory}>
       <Route path="/" component={StartPage}>
-        <Route path="app" component={HTMLPage} />
+        <Route path="input" component={InputPage} />
+        <Route path="result" component={HTMLPage} />
       </Route>
     </Router>
   </MuiThemeProvider>

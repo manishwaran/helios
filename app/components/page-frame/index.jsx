@@ -14,8 +14,8 @@ export default class PageFrame extends Component {
 
   render() {
     const loadingClass = this.props.isHtmlLoading ? 'loading' : '';
-    const reload = <span><i className="nc-icon-outline arrows-1_refresh-68" /> Reload </span>;
-    const editSettings = <span><i className="nc-icon-outline ui-1_settings-tool-66" /> Edit settings </span>;
+    const reload = <span>Reload </span>;
+    const editSettings = <span>Edit settings </span>;
     const fetchingHtml = <p>Fetching HTML via Turbo</p>;
     const turboError = (
       <div>
@@ -33,7 +33,7 @@ export default class PageFrame extends Component {
       />
     );
     const placeHolder = (
-      <div className="empty-response">
+      <div className="empty-response" >
         <div className="text-xs-center empty-response-content">
           <i className={`nc-icon-outline nature_turtle mascot ${loadingClass}`} />
           { this.props.isHtmlLoading ? fetchingHtml : turboError }

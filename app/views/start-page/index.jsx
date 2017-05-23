@@ -15,7 +15,7 @@ export default class StartPage extends Component {
 
   componentWillMount() {
     if (this.props.location.pathname === '/') {
-      browserHistory.push('/app');
+      browserHistory.push('/input');
     }
   }
 

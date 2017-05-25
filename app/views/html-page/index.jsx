@@ -1,10 +1,11 @@
+import Mercury from 'mercury';
 import { observer } from 'mobx-react';
 import React, { Component } from 'react';
-import Mercury from 'mercury';
 
 import './style.scss';
 import propTypes from './proptypes';
 import { HTMLStore } from '../../stores';
+import { HTMLAction } from '../../actions';
 import { PageFrame } from '../../components';
 
 @observer
@@ -14,6 +15,7 @@ export default class StartPage extends Component {
 
   constructor(props) {
     super(props);
+    this.htmlAction = new HTMLAction();
     this.onClick = this.onClick.bind(this);
   }
 
@@ -22,7 +24,10 @@ export default class StartPage extends Component {
     const screenWidth = window.innerWidth;
     const screenHeight = window.innerHeight;
     const mercury = new Mercury(iframeDocument, { screenWidth, screenHeight });
-    mercury.getContentBlock();
+    const block = mercury.getContentBlock();
+    const blockElement = iframeDocument.querySelector(block.selector);
+    const blockHTML = blockElement.innerHTML;
+    this.htmlAction.updateHTML(blockHTML);
   }
 
   render() {

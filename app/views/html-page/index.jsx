@@ -1,5 +1,6 @@
 import { observer } from 'mobx-react';
 import React, { Component } from 'react';
+import Mercury from 'mercury';
 
 import './style.scss';
 import propTypes from './proptypes';
@@ -17,7 +18,11 @@ export default class StartPage extends Component {
   }
 
   onClick() {
-    console.log('clicked');
+    const iframeDocument = document.querySelector('iframe').contentDocument;
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+    const mercury = new Mercury(iframeDocument, { screenWidth, screenHeight });
+    mercury.getContentBlock();
   }
 
   render() {

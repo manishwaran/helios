@@ -16,7 +16,7 @@ export default class StartPage extends Component {
     this.onChange = this.onChange.bind(this);
     this.inputAction = new HTMLAction();
     this.state = {
-      url: '',
+      url: 'http://www.gpsdiscount.com/gpsdiscount/cart.php?m=product_detail&p=22306',
     };
   }
 
